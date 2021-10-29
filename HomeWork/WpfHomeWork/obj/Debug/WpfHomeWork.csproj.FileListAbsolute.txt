@@ -1,0 +1,14 @@
+C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\bin\Debug\WpfHomeWork.exe.config
+C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\bin\Debug\WpfHomeWork.exe
+C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\bin\Debug\WpfHomeWork.pdb
+C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\WpfHomeWork.csproj.AssemblyReference.cache
+C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\MainWindow.baml
+C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\MainWindow.g.cs
+C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\App.g.cs
+C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\WpfHomeWork_MarkupCompile.cache
+C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\WpfHomeWork.g.resources
+C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\WpfHomeWork.Properties.Resources.resources
+C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\WpfHomeWork.csproj.GenerateResource.cache
+C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\WpfHomeWork.csproj.CoreCompileInputs.cache
+C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\WpfHomeWork.exe
+C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\WpfHomeWork.pdb

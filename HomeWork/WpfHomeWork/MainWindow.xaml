@@ -4,7 +4,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow123" Height="450" Width="800">
+        Title="Данные по окладам сотрудников" Height="450" Width="800">
     <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
@@ -13,20 +13,80 @@
 
         <StackPanel Margin="10">
 
-            <TextBlock Text="ФИО сотрудника" />
-            <TextBox Text="{Binding Name}" />
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="FontSize" Value="15"/>
+                </Style>
+            </StackPanel.Resources>
 
-            <Button Command="{Binding AddEmployeeCommand, Mode=OneTime}" Content="Добавить" />
+            <TabControl>
+                <TabItem x:Name="Enterdata">
+
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="3">Ввод данных</TextBlock>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <TabItem.Content>
+
+                        <StackPanel>
+
+                            <TextBlock Text="ФИО" />
+                            <TextBox Text="{Binding Name}" />
+                            <TextBlock Text="Оклад" />
+                            <TextBox Text="{Binding ZP}" />
+                            <Button Command="{Binding AddEmployeeCommand, Mode=OneTime}" Content="Записать в базу" />
+                            
+                        </StackPanel>
+
+                        
+
+                    </TabItem.Content>
+
+                </TabItem>
+                <TabItem>
+
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="3">Поиск данных</TextBlock>
+                        </StackPanel>
+                    </TabItem.Header>
+
+                    <TabItem.Content>
+
+                        <StackPanel>
+
+                            <TextBlock Text="Значение оклада" />
+                            <TextBox Text="{Binding ZP}" />
+                            <Button Command="{Binding AddEmployeeCommand, Mode=OneTime}" Content="Выполнить поиск" />
+
+                        </StackPanel>
+
+                    </TabItem.Content>
+
+                </TabItem>
+
+            </TabControl>
+            
         </StackPanel>
+        
 
-        <ScrollViewer Grid.Column="1">
+            <ScrollViewer Grid.Column="1">
             <ItemsControl  ItemsSource="{Binding Employees, Mode=OneTime}" Margin="10">
                 <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding Name}" />
+                    <DataTemplate >
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="---------" />
+                            <TextBlock Text="{Binding Name}" />
+                            <TextBlock Text="{Binding ZP}" />
+                            <TextBlock Text="---------" />
+                        </StackPanel>
                     </DataTemplate>
+                 
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
+            
         </ScrollViewer>
     </Grid>
 </Window>
