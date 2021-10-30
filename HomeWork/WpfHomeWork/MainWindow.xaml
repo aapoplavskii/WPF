@@ -2,13 +2,14 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:wpfhomework="clr-namespace:WpfHomeWork" d:DataContext="{d:DesignInstance Type=wpfhomework:MainViewModel}"
         mc:Ignorable="d"
         Title="Данные по окладам сотрудников" Height="450" Width="800">
     <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
 
         <StackPanel Margin="10">
@@ -37,6 +38,7 @@
                             <TextBlock Text="Оклад" />
                             <TextBox Text="{Binding ZP}" />
                             <Button Command="{Binding AddEmployeeCommand, Mode=OneTime}" Content="Записать в базу" />
+                            <Button Command="{Binding SortEmployeeCommand, Mode=OneTime}" Content="Отсортировать данные" />
                             
                         </StackPanel>
 
@@ -59,7 +61,7 @@
 
                             <TextBlock Text="Значение оклада" />
                             <TextBox Text="{Binding ZP}" />
-                            <Button Command="{Binding AddEmployeeCommand1, Mode=OneTime}" Content="Выполнить поиск" />
+                            <Button Command="{Binding AddEmployeeCommand, Mode=OneTime}" Content="Выполнить поиск" />
 
                         </StackPanel>
 
@@ -86,7 +88,22 @@
                  
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-            
+          </ScrollViewer>
+
+        <ScrollViewer Grid.Column="2">
+            <ListBox  ItemsSource="{Binding EmployeesBinary}" Margin="10">
+                <ListBox.ItemTemplate>
+                    <DataTemplate >
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="---------" />
+                            <TextBlock Text="{Binding Name}" />
+                            <TextBlock Text="{Binding ZP}" />
+                            <TextBlock Text="---------" />
+                        </StackPanel>
+                    </DataTemplate>
+
+                </ListBox.ItemTemplate>
+            </ListBox>
         </ScrollViewer>
     </Grid>
 </Window>

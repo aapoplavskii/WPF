@@ -12,5 +12,7 @@ namespace WpfHomeWork
             InitializeComponent();
             DataContext = new MainViewModel();
         }
+
+        
     }
 }

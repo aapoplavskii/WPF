@@ -12,3 +12,4 @@ C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\WpfHomeWork.csproj.GenerateResou
 C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\WpfHomeWork.csproj.CoreCompileInputs.cache
 C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\WpfHomeWork.exe
 C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\WpfHomeWork.pdb
+C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\WpfHomeWork_MarkupCompile.lref

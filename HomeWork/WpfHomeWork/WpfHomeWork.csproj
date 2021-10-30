@@ -64,6 +64,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Employee.cs" />
+    <Compile Include="EmployeeBinary.cs" />
     <Compile Include="Implementations\Command.cs" />
     <Compile Include="Implementations\ViewModel.cs" />
     <Compile Include="Implementations\WorkData.cs" />
