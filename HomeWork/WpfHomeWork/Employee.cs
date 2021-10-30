@@ -2,7 +2,7 @@
 
 namespace WpfHomeWork
 {
-    internal class Employee: ViewModel
+    internal class Employee : ViewModel
     {
         public string Name { get; set; }
         public int ZP { get; set; }
@@ -14,6 +14,33 @@ namespace WpfHomeWork
         public override string ToString()
         {
             return Name + " - " + ZP.ToString();
+        }
+
+        public void Add(Employee currentNode, Employee addedNode)
+        {
+
+            if (addedNode.ZP < currentNode.ZP)
+            {
+                if (currentNode.LeftNode != null)
+                {
+                    Add(currentNode.LeftNode, addedNode);
+                }
+                else
+                {
+                    currentNode.LeftNode = addedNode;
+                }
+            }
+            else
+            {
+                if (currentNode.RightNode != null)
+                {
+                    Add(currentNode.RightNode, addedNode);
+                }
+                else
+                {
+                    currentNode.RightNode = addedNode;
+                }
+            }
         }
     }
 }

@@ -59,7 +59,7 @@
 
                             <TextBlock Text="Значение оклада" />
                             <TextBox Text="{Binding ZP}" />
-                            <Button Command="{Binding AddEmployeeCommand, Mode=OneTime}" Content="Выполнить поиск" />
+                            <Button Command="{Binding AddEmployeeCommand1, Mode=OneTime}" Content="Выполнить поиск" />
 
                         </StackPanel>
 

@@ -66,6 +66,7 @@
     <Compile Include="Employee.cs" />
     <Compile Include="Implementations\Command.cs" />
     <Compile Include="Implementations\ViewModel.cs" />
+    <Compile Include="Implementations\WorkData.cs" />
     <Compile Include="MainViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
