@@ -7,11 +7,12 @@ namespace WpfHomeWork
 {
     internal class MainViewModel : ViewModel
     {
-        List<Employee> listemployees = new List<Employee>();
+        List<Employee> listemployee = new List<Employee>();
+        
         public MainViewModel()
         {
             Employees = new ObservableCollection<Employee>();
-            EmployeesBinary = new ObservableCollection<List<EmployeeBinary>>();
+            EmployeesBinary = new ObservableCollection<EmployeeBinary>();
 
         }
 
@@ -19,8 +20,8 @@ namespace WpfHomeWork
         public ICommand SortEmployeeCommand { get { return new Command(SortEmployee); } }
 
         public ObservableCollection<Employee> Employees { get; private set; }
+        public ObservableCollection<EmployeeBinary> EmployeesBinary { get; private set; }
 
-        public ObservableCollection<List<EmployeeBinary>> EmployeesBinary { get; private set; }
         public string Name { get; set; }
         public int ZP { get; set; }
 
@@ -29,7 +30,7 @@ namespace WpfHomeWork
 
             var employee = new Employee() { Name = this.Name, ZP = this.ZP };
 
-            listemployees.Add(employee);
+            listemployee.Add(employee);
 
             Employees.Add(employee);
 
@@ -41,22 +42,40 @@ namespace WpfHomeWork
 
         private void SortEmployee()
         {
-            var workemployee = new WorkData();
-            EmployeeBinary employeeBinary = null;
+            EmployeesBinary.Clear();
 
-            foreach (var itememployee in listemployees)
+            var workemployeebinary = new WorkData();
+            var employeebinaryitem = new EmployeeBinary();
+
+            foreach (var itememployee in listemployee)
             {
-                employeeBinary = workemployee.Add(itememployee.Name, itememployee.ZP);
-
+                employeebinaryitem = workemployeebinary.Add(itememployee.Name, itememployee.ZP);
+                
             }
 
-            var employeesbinary = workemployee.Traverse(employeeBinary);
+            Traverse(employeebinaryitem);
 
+        }
 
-            EmployeesBinary.Add(employeesbinary);
+        public void Traverse(EmployeeBinary node)
+        {
+
+            if (node.LeftNode != null)
+            {
+                Traverse(node.LeftNode);
+            }
+
+            EmployeesBinary.Add(node);
+
+            if (node.RightNode != null)
+            {
+
+                Traverse(node.RightNode);
+            }
 
 
         }
+
 
 
     }

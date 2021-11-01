@@ -9,34 +9,35 @@ namespace WpfHomeWork.Implementations
     class WorkData
     {
         EmployeeBinary root = null;
-        List<EmployeeBinary> employeeBinaries = new List<EmployeeBinary>();
+        
+        //public EmployeeBinary Traverse(EmployeeBinary node)
+        //{
 
-        public List<EmployeeBinary> Traverse(EmployeeBinary node)
-        {
+        //    if (node.LeftNode != null)
+        //    {
+        //        Traverse(node.LeftNode);
+        //    }
 
-            if (node.LeftNode != null)
-            {
-                Traverse(node.LeftNode);
-            }
+        //    return node;
 
-            employeeBinaries.Add(node);
+        //    if (node.RightNode != null)
+        //    {
 
-            if (node.RightNode != null)
-            {
+        //        Traverse(node.RightNode);
+        //    }
 
-                Traverse(node.RightNode);
-            }
+            
+        //}
 
-            return employeeBinaries;
-        }
+        
         public EmployeeBinary Add(string name, int zp)
         {
             if (root == null)
             {
                 root = new EmployeeBinary
                 {
-                    Name = name,
-                    ZP = zp
+                    NameBinary = name,
+                    ZPBinary = zp
                 };
 
             }
@@ -44,8 +45,8 @@ namespace WpfHomeWork.Implementations
             {
                 Add(root, new EmployeeBinary
                 {
-                    Name = name,
-                    ZP = zp
+                    NameBinary = name,
+                    ZPBinary = zp
                 });
 
             }
@@ -55,7 +56,7 @@ namespace WpfHomeWork.Implementations
         private void Add(EmployeeBinary currentNode, EmployeeBinary addedNode)
         {
 
-            if (addedNode.ZP < currentNode.ZP)
+            if (addedNode.ZPBinary < currentNode.ZPBinary)
             {
                 if (currentNode.LeftNode != null)
                 {

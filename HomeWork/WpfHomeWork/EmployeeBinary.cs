@@ -10,8 +10,8 @@ namespace WpfHomeWork
     internal class EmployeeBinary : ViewModel
     {
 
-        public string Name { get; set; }
-        public int ZP { get; set; }
+        public string NameBinary { get; set; }
+        public int ZPBinary { get; set; }
 
         public EmployeeBinary LeftNode { get; set; }
 
@@ -19,7 +19,7 @@ namespace WpfHomeWork
 
         public override string ToString()
         {
-            return Name + " - " + ZP.ToString();
+            return NameBinary + " - " + ZPBinary.ToString();
         }
 
         

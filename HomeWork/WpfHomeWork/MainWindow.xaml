@@ -96,8 +96,8 @@
                     <DataTemplate >
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="---------" />
-                            <TextBlock Text="{Binding Name}" />
-                            <TextBlock Text="{Binding ZP}" />
+                            <TextBlock Text="{Binding NameBinary}" />
+                            <TextBlock Text="{Binding ZPBinary}" />
                             <TextBlock Text="---------" />
                         </StackPanel>
                     </DataTemplate>
