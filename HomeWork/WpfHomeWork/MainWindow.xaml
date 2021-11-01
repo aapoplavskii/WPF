@@ -7,7 +7,7 @@
         Title="Данные по окладам сотрудников" Height="450" Width="800">
     <Grid Background="AliceBlue">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
@@ -75,9 +75,11 @@
         
 
             <ScrollViewer Grid.Column="1">
-            <ItemsControl  ItemsSource="{Binding Employees, Mode=OneTime}" Margin="10">
+            
+            <ItemsControl  ItemsSource="{Binding Employees, Mode=OneTime}" Margin="10"> 
+                
                 <ItemsControl.ItemTemplate>
-                    <DataTemplate >
+                      <DataTemplate>
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="---------" />
                             <TextBlock Text="{Binding Name}" />
@@ -89,11 +91,12 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
           </ScrollViewer>
-
+        
         <ScrollViewer Grid.Column="2">
-            <ListBox  ItemsSource="{Binding EmployeesBinary}" Margin="10">
-                <ListBox.ItemTemplate>
-                    <DataTemplate >
+            <ItemsControl  ItemsSource="{Binding EmployeesBinary, Mode=OneTime}" Margin="10">
+                
+                <ItemsControl.ItemTemplate>
+                      <DataTemplate >
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="---------" />
                             <TextBlock Text="{Binding NameBinary}" />
@@ -102,8 +105,8 @@
                         </StackPanel>
                     </DataTemplate>
 
-                </ListBox.ItemTemplate>
-            </ListBox>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
         </ScrollViewer>
     </Grid>
 </Window>

@@ -8,7 +8,7 @@ namespace WpfHomeWork
     internal class MainViewModel : ViewModel
     {
         List<Employee> listemployee = new List<Employee>();
-        
+
         public MainViewModel()
         {
             Employees = new ObservableCollection<Employee>();
@@ -50,12 +50,13 @@ namespace WpfHomeWork
             foreach (var itememployee in listemployee)
             {
                 employeebinaryitem = workemployeebinary.Add(itememployee.Name, itememployee.ZP);
-                
+
             }
 
             Traverse(employeebinaryitem);
 
         }
+
 
         public void Traverse(EmployeeBinary node)
         {
@@ -74,7 +75,9 @@ namespace WpfHomeWork
             }
 
 
+
         }
+
 
 
 

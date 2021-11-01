@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,27 +10,7 @@ namespace WpfHomeWork.Implementations
     class WorkData
     {
         EmployeeBinary root = null;
-        
-        //public EmployeeBinary Traverse(EmployeeBinary node)
-        //{
 
-        //    if (node.LeftNode != null)
-        //    {
-        //        Traverse(node.LeftNode);
-        //    }
-
-        //    return node;
-
-        //    if (node.RightNode != null)
-        //    {
-
-        //        Traverse(node.RightNode);
-        //    }
-
-            
-        //}
-
-        
         public EmployeeBinary Add(string name, int zp)
         {
             if (root == null)
