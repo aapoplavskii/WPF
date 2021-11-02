@@ -13,7 +13,6 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Margin="10">
-
             <StackPanel.Resources>
                 <Style TargetType="{x:Type TextBlock}">
                     <Setter Property="FontSize" Value="15"/>
@@ -36,9 +35,9 @@
                             <TextBlock Text="ФИО" />
                             <TextBox Text="{Binding Name}" />
                             <TextBlock Text="Оклад" />
-                            <TextBox Text="{Binding ZP}" />
-                            <Button Command="{Binding AddEmployeeCommand, Mode=OneTime}" Content="Записать в базу" />
-                            <Button Command="{Binding SortEmployeeCommand, Mode=OneTime}" Content="Отсортировать данные" />
+                            <TextBox Text="{Binding ZP}" Margin="0 0 0 10"/>
+                            <Button Command="{Binding AddEmployeeCommand, Mode=OneTime}" Content="Записать в базу" Margin="0 0 0 10"/>
+                            <Button Command="{Binding SortEmployeeCommand, Mode=OneTime}" Content="Отсортировать данные" Margin="0 0 0 10"/>
                             
                         </StackPanel>
 
@@ -60,26 +59,36 @@
                         <StackPanel>
 
                             <TextBlock Text="Значение оклада" />
-                            <TextBox Text="{Binding ZP}" />
-                            <Button Command="{Binding AddEmployeeCommand, Mode=OneTime}" Content="Выполнить поиск" />
+                            <TextBox Text="{Binding ZP}" Margin="0 0 0 10"/>
+                            
+                            <Button Command="{Binding FindEmployeeCommand, Mode=OneTime}" Content="Выполнить поиск"  Margin="0 0 0 10"/>
+                            
+                            <TextBlock Text="Результат поиска:" HorizontalAlignment="Center"/>
+
+                            <TextBox Text="{Binding EmployeesBinary, TargetNullValue='Значение не найдено'}" HorizontalAlignment="Center"/>
+
+
 
                         </StackPanel>
+                        
+
 
                     </TabItem.Content>
-
+                    
                 </TabItem>
-
+                
             </TabControl>
+
             
         </StackPanel>
         
 
             <ScrollViewer Grid.Column="1">
-            
-            <ItemsControl  ItemsSource="{Binding Employees, Mode=OneTime}" Margin="10"> 
+                            
+            <ItemsControl  ItemsSource="{Binding Employees, Mode=OneTime}"> 
                 
                 <ItemsControl.ItemTemplate>
-                      <DataTemplate>
+                        <DataTemplate>
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="---------" />
                             <TextBlock Text="{Binding Name}" />
