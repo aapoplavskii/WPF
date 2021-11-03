@@ -61,11 +61,11 @@
                             <TextBlock Text="Значение оклада" />
                             <TextBox Text="{Binding ZP}" Margin="0 0 0 10"/>
                             
-                            <Button Command="{Binding FindEmployeeCommand, Mode=OneTime}" Content="Выполнить поиск"  Margin="0 0 0 10"/>
+                            <Button Command="{Binding FindEmployeeCommand, Mode=OneTime}" Content="Выполнить поиск"  Margin="0 0 0 20"/>
                             
-                            <TextBlock Text="Результат поиска:" HorizontalAlignment="Center"/>
+                            <TextBlock Text="Результат поиска:" HorizontalAlignment="Center" Margin="0 0 0 20"/>
 
-                            <TextBox Text="{Binding ResultFind, TargetNullValue='Значение не найдено'}" HorizontalAlignment="Center"/>
+                            <TextBox Text="{Binding ResultFind}" HorizontalAlignment="Center"/>
 
 
 
