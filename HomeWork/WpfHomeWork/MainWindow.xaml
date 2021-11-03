@@ -65,7 +65,7 @@
                             
                             <TextBlock Text="Результат поиска:" HorizontalAlignment="Center"/>
 
-                            <TextBox Text="{Binding EmployeesBinary, TargetNullValue='Значение не найдено'}" HorizontalAlignment="Center"/>
+                            <TextBox Text="{Binding ResultFind, TargetNullValue='Значение не найдено'}" HorizontalAlignment="Center"/>
 
 
 

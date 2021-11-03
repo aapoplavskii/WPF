@@ -103,9 +103,7 @@ namespace WpfHomeWork
                 ResultFind = FindEmployeeBinary.NameBinary;
 
             }
-
-
-
+            RaisePropertyChanged("ResultFind");
         }
 
         
