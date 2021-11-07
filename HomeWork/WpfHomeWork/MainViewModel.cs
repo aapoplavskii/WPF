@@ -61,28 +61,20 @@ namespace WpfHomeWork
 
             }
 
-            Traverse(employeebinaryitem);
+            workemployeebinary.Traverse(employeebinaryitem);
+
+            foreach (var itememployeebinary in workemployeebinary.listemployeeBinaries)
+            {
+
+                EmployeesBinary.Add(itememployeebinary);
+
+            }
+
+            
 
         }
 
-
-        public void Traverse(EmployeeBinary node)
-        {
-
-            if (node.LeftNode != null)
-            {
-                Traverse(node.LeftNode);
-            }
-
-            EmployeesBinary.Add(node);
-
-            if (node.RightNode != null)
-            {
-
-                Traverse(node.RightNode);
-            }
-
-        }
+        
 
         public void FindEmployee()
         {

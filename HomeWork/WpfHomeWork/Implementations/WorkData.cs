@@ -11,6 +11,25 @@ namespace WpfHomeWork.Implementations
     {
         EmployeeBinary root = null;
 
+        public List<EmployeeBinary> listemployeeBinaries = new List<EmployeeBinary>();
+        public void Traverse(EmployeeBinary node)
+        {
+
+            if (node.LeftNode != null)
+            {
+                Traverse(node.LeftNode);
+            }
+
+            listemployeeBinaries.Add(node);
+
+            if (node.RightNode != null)
+            {
+
+                Traverse(node.RightNode);
+            }
+
+        }
+
         public EmployeeBinary Seach(EmployeeBinary current, int zp)
         {
             if (zp < current.ZPBinary)

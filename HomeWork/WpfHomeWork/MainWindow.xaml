@@ -11,6 +11,7 @@
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="2" Text="Бинарное дерево" />
 
         <StackPanel Margin="10">
             <StackPanel.Resources>
@@ -85,7 +86,7 @@
 
             <ScrollViewer Grid.Column="1">
                             
-            <ItemsControl  ItemsSource="{Binding Employees, Mode=OneTime}"> 
+            <ItemsControl ItemsSource="{Binding Employees, Mode=OneTime}">
                 
                 <ItemsControl.ItemTemplate>
                         <DataTemplate>
