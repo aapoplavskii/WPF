@@ -11,7 +11,8 @@
             <ColumnDefinition Width="1*" />
             <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="2" Text="Бинарное дерево" />
+        <TextBlock Grid.Column="1" Text="Введенные данные" HorizontalAlignment="Center" Foreground="BlueViolet" />
+        <TextBlock Grid.Column="2" Text="Отсортированные данные (бинарное дерево)" TextWrapping="Wrap" HorizontalAlignment="Center" Foreground="Red" />
 
         <StackPanel Margin="10">
             <StackPanel.Resources>
@@ -39,10 +40,10 @@
                             <TextBox Text="{Binding ZP}" Margin="0 0 0 10"/>
                             <Button Command="{Binding AddEmployeeCommand, Mode=OneTime}" Content="Записать в базу" Margin="0 0 0 10"/>
                             <Button Command="{Binding SortEmployeeCommand, Mode=OneTime}" Content="Отсортировать данные" Margin="0 0 0 10"/>
-                            
+
                         </StackPanel>
 
-                        
+
 
                     </TabItem.Content>
 
@@ -61,35 +62,35 @@
 
                             <TextBlock Text="Значение оклада" />
                             <TextBox Text="{Binding ZP}" Margin="0 0 0 10"/>
-                            
-                            <Button Command="{Binding FindEmployeeCommand, Mode=OneTime}" Content="Выполнить поиск"  Margin="0 0 0 20"/>
-                            
-                            <TextBlock Text="Результат поиска:" HorizontalAlignment="Center" Margin="0 0 0 20"/>
 
-                            <TextBox Text="{Binding ResultFind}" HorizontalAlignment="Center"/>
+                            <Button Command="{Binding FindEmployeeCommand, Mode=OneTime}" Content="Выполнить поиск"  Margin="0 0 0 20"/>
+
+                            <TextBlock Text="Результат поиска - ФИО сотрудника с указанным значением оклада:" TextWrapping="WrapWithOverflow" HorizontalAlignment="Center" Margin="0,0,0,20" />
+
+                            <TextBox Text="{Binding ResultFind}" HorizontalAlignment="Center" x:Name="ResultXAML" Foreground="{Binding Background}"/>
 
 
 
                         </StackPanel>
-                        
+
 
 
                     </TabItem.Content>
-                    
+
                 </TabItem>
-                
+
             </TabControl>
 
-            
-        </StackPanel>
-        
 
-            <ScrollViewer Grid.Column="1">
-                            
+        </StackPanel>
+
+
+        <ScrollViewer Grid.Column="1">
+
             <ItemsControl ItemsSource="{Binding Employees, Mode=OneTime}">
-                
+
                 <ItemsControl.ItemTemplate>
-                        <DataTemplate>
+                    <DataTemplate>
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="---------" />
                             <TextBlock Text="{Binding Name}" />
@@ -97,16 +98,16 @@
                             <TextBlock Text="---------" />
                         </StackPanel>
                     </DataTemplate>
-                 
+
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-          </ScrollViewer>
-        
+        </ScrollViewer>
+
         <ScrollViewer Grid.Column="2">
             <ItemsControl  ItemsSource="{Binding EmployeesBinary, Mode=OneTime}" Margin="10">
-                
+
                 <ItemsControl.ItemTemplate>
-                      <DataTemplate >
+                    <DataTemplate >
                         <StackPanel Orientation="Vertical">
                             <TextBlock Text="---------" />
                             <TextBlock Text="{Binding NameBinary}" />

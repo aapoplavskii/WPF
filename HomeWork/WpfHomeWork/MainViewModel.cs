@@ -1,15 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using System.Windows.Media;
 using WpfHomeWork.Implementations;
 
 namespace WpfHomeWork
 {
     internal class MainViewModel : ViewModel
     {
+
         List<Employee> listemployee = new List<Employee>();
 
-        
+
         EmployeeBinary employeebinaryitem = new EmployeeBinary();
 
 
@@ -17,7 +19,7 @@ namespace WpfHomeWork
         {
             Employees = new ObservableCollection<Employee>();
             EmployeesBinary = new ObservableCollection<EmployeeBinary>();
-            
+
         }
 
         public ICommand AddEmployeeCommand { get { return new Command(AddEmployee); } }
@@ -26,12 +28,27 @@ namespace WpfHomeWork
 
         public ObservableCollection<Employee> Employees { get; private set; }
         public ObservableCollection<EmployeeBinary> EmployeesBinary { get; private set; }
-        
+
 
         public string Name { get; set; }
         public int ZP { get; set; }
 
-       public string ResultFind { get; set; }
+        public string ResultFind { get; set; }
+
+        private SolidColorBrush _background;
+        public SolidColorBrush Background
+        {
+            get
+            {
+                return _background;
+            }
+
+            set
+            {
+                _background = value;
+                RaisePropertyChanged(() => Background);
+            }
+        }
 
         private void AddEmployee()
         {
@@ -50,6 +67,7 @@ namespace WpfHomeWork
 
         private void SortEmployee()
         {
+
             EmployeesBinary.Clear();
 
             var workemployeebinary = new WorkData();
@@ -70,11 +88,12 @@ namespace WpfHomeWork
 
             }
 
-            
+
+
 
         }
 
-        
+
 
         public void FindEmployee()
         {
@@ -87,18 +106,22 @@ namespace WpfHomeWork
             {
 
                 ResultFind = "Ничего не найдено!";
+                //((MainWindow)System.Windows.Application.Current.MainWindow).ResultXAML.Foreground = new SolidColorBrush(Colors.Green);
+                Background = new SolidColorBrush(Colors.Green);
+
 
             }
             else
             {
 
                 ResultFind = FindEmployeeBinary.NameBinary;
+                Background = new SolidColorBrush(Colors.Black);
 
             }
             RaisePropertyChanged("ResultFind");
         }
 
-        
+
 
 
     }
