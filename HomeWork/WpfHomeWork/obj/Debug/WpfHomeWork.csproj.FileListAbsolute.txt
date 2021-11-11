@@ -13,5 +13,3 @@ C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\WpfHomeWork.csproj.CoreCompileIn
 C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\WpfHomeWork.exe
 C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\WpfHomeWork.pdb
 C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\WpfHomeWork_MarkupCompile.lref
-C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\WarningWindow.g.cs
-C:\WorkC#\DZ\WPF\HomeWork\WpfHomeWork\obj\Debug\WarningWindow.baml

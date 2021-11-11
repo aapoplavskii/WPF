@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
 using WpfHomeWork.Implementations;
@@ -51,21 +51,7 @@ namespace WpfHomeWork
             }
         }
 
-        private string _warningtext;
-        public string Warningtext
-        {
-            get
-            {
-                return _warningtext;
-            }
-
-            set
-            {
-                _warningtext = value;
-                RaisePropertyChanged(() => Warningtext);
-            }
-        }
-
+        public bool FocusZP { get; set; }
         private void AddEmployee()
         {
             if (this.ZP != 0)
@@ -84,16 +70,16 @@ namespace WpfHomeWork
             }
             else
             {
+                MessageBox.Show("ВВЕДЕНЫ НЕКОРРЕКТНЫЕ ДАННЫЕ ЗАРАБОТНОЙ ПЛАТЫ!!", "Предупреждение");
 
-                Warningtext = "ВВЕДЕНЫ НЕКОРРЕКТНЫЕ ДАННЫЕ ЗАРАБОТНОЙ ПЛАТЫ!!!";
-
-                WarningWindowShow();
 
                 ZP = 0;
 
                 RaisePropertyChanged(() => ZP);
 
-                ((MainWindow)System.Windows.Application.Current.MainWindow).EnterZP.Focus();
+            
+
+             ((MainWindow)System.Windows.Application.Current.MainWindow).EnterZP.Focus();
 
             }
         }
@@ -127,10 +113,7 @@ namespace WpfHomeWork
             }
             else
             {
-
-                Warningtext = "НЕ ВВЕДЕНО НИ ОДНО ЗНАЧЕНИЕ!!!";
-
-                WarningWindowShow();
+                MessageBox.Show("НЕ ВВЕДЕНО НИ ОДНО ЗНАЧЕНИЕ!!!", "Предупреждение");
 
                 Name = null;
                 ZP = 0;
@@ -146,20 +129,11 @@ namespace WpfHomeWork
 
         }
 
-        private async void WarningWindowShow()
-        {
-
-            WarningWindow warning = new WarningWindow();
-            warning.Show();
-            await Task.Delay(3000);
-            warning.Close();
-
-        }
 
         public void FindEmployee()
         {
 
-            if (this.ZP!=0)
+            if (this.ZP != 0)
             {
 
                 var workemployeebinary = new WorkData();
@@ -188,10 +162,7 @@ namespace WpfHomeWork
             else
             {
 
-
-                Warningtext = "ВВЕДЕНЫ НЕКОРРЕКТНЫЕ ДАННЫЕ ДЛЯ ПОИСКА ПО ЗАРАБОТНОЙ ПЛАТЕ!!!";
-
-                WarningWindowShow();
+                MessageBox.Show("ВВЕДЕНЫ НЕКОРРЕКТНЫЕ ДАННЫЕ ДЛЯ ПОИСКА ПО ЗАРАБОТНОЙ ПЛАТЕ!!!", "Предупреждение");
 
                 ZP = 0;
 
