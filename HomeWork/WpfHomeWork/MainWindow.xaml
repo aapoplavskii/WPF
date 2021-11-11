@@ -61,7 +61,7 @@
                         <StackPanel>
 
                             <TextBlock Text="Значение оклада" />
-                            <TextBox Text="{Binding ZP}" Margin="0 0 0 10"/>
+                            <TextBox Text="{Binding ZP}" x:Name="FindZP" Margin="0 0 0 10"/>
 
                             <Button Command="{Binding FindEmployeeCommand, Mode=OneTime}" Content="Выполнить поиск"  Margin="0 0 0 20"/>
 

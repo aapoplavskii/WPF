@@ -159,7 +159,7 @@ namespace WpfHomeWork
         public void FindEmployee()
         {
 
-            if (this.ZP)
+            if (this.ZP!=0)
             {
 
                 var workemployeebinary = new WorkData();
