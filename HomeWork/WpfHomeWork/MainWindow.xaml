@@ -35,9 +35,9 @@
                         <StackPanel>
 
                             <TextBlock Text="ФИО" />
-                            <TextBox Text="{Binding Name}" />
+                            <TextBox Text="{Binding Name}" x:Name="EnterName"/>
                             <TextBlock Text="Оклад" />
-                            <TextBox Text="{Binding ZP}" Margin="0 0 0 10"/>
+                            <TextBox Text="{Binding ZP}" x:Name="EnterZP" Margin="0 0 0 10"/>
                             <Button Command="{Binding AddEmployeeCommand, Mode=OneTime}" Content="Записать в базу" Margin="0 0 0 10"/>
                             <Button Command="{Binding SortEmployeeCommand, Mode=OneTime}" Content="Отсортировать данные" Margin="0 0 0 10"/>
 
