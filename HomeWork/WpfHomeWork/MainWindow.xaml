@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:wpfhomework="clr-namespace:WpfHomeWork" d:DataContext="{d:DesignInstance Type=wpfhomework:MainViewModel}"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:wpfhomework="clr-namespace:WpfHomeWork" 
         mc:Ignorable="d"
         Title="Данные по окладам сотрудников" Height="450" Width="800">
     <Grid Background="AliceBlue">
@@ -37,7 +37,7 @@
                             <TextBlock Text="ФИО" />
                             <TextBox Text="{Binding Name}" x:Name="EnterName"/>
                             <TextBlock Text="Оклад" />
-                            <TextBox Text="{Binding ZP}" x:Name="EnterZP" Margin="0 0 0 10"/>
+                            <TextBox Text="{Binding ZP}" x:Name="EnterZP" Margin="0 0 0 10" implementations:FocusExtension.IsFocused="{Binding IsTextBoxFocused}"/>
                             <Button Command="{Binding AddEmployeeCommand, Mode=OneTime}" Content="Записать в базу" Margin="0 0 0 10"/>
                             <Button Command="{Binding SortEmployeeCommand, Mode=OneTime}" Content="Отсортировать данные" Margin="0 0 0 10"/>
 
@@ -61,7 +61,7 @@
                         <StackPanel>
 
                             <TextBlock Text="Значение оклада" />
-                            <TextBox Text="{Binding ZP}" x:Name="FindZP" Margin="0 0 0 10"/>
+                            <TextBox Text="{Binding ZP}" x:Name="FindZP" Margin="0 0 0 10" />
 
                             <Button Command="{Binding FindEmployeeCommand, Mode=OneTime}" Content="Выполнить поиск"  Margin="0 0 0 20"/>
 

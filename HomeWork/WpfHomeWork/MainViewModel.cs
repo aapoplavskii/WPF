@@ -51,7 +51,26 @@ namespace WpfHomeWork
             }
         }
 
-        public bool FocusZP { get; set; }
+        private bool _isFocused = false;
+
+        public bool IsTextBoxFocused
+        {
+            get { return _isFocused; }
+            set
+            {
+                if (_isFocused == value)
+                {
+                    _isFocused = false;
+
+                    RaisePropertyChanged("IsTextBoxFocused");
+                }
+                _isFocused = value;
+                RaisePropertyChanged("IsTextBoxFocused");
+            }
+
+
+
+        }
         private void AddEmployee()
         {
             if (this.ZP != 0)
