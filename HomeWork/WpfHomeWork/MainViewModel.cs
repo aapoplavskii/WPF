@@ -51,26 +51,8 @@ namespace WpfHomeWork
             }
         }
 
-        private bool _isFocused = false;
-
-        public bool IsTextBoxFocused
-        {
-            get { return _isFocused; }
-            set
-            {
-                if (_isFocused == value)
-                {
-                    _isFocused = false;
-
-                    RaisePropertyChanged("IsTextBoxFocused");
-                }
-                _isFocused = value;
-                RaisePropertyChanged("IsTextBoxFocused");
-            }
-
-
-
-        }
+        public bool FocusZP { get; set; }
+        public bool FocusName { get; set; }
         private void AddEmployee()
         {
             if (this.ZP != 0)
@@ -86,6 +68,9 @@ namespace WpfHomeWork
                 ZP = 0;
                 RaisePropertyChanged(() => Name);
                 RaisePropertyChanged(() => ZP);
+
+                FocusName = true;
+                RaisePropertyChanged("FocusName");
             }
             else
             {
@@ -96,9 +81,10 @@ namespace WpfHomeWork
 
                 RaisePropertyChanged(() => ZP);
 
-            
 
-             ((MainWindow)System.Windows.Application.Current.MainWindow).EnterZP.Focus();
+
+                FocusName = true;
+                RaisePropertyChanged("FocusName");
 
             }
         }
@@ -128,6 +114,7 @@ namespace WpfHomeWork
                     EmployeesBinary.Add(itememployeebinary);
 
                 }
+                
 
             }
             else
@@ -139,7 +126,8 @@ namespace WpfHomeWork
                 RaisePropertyChanged(() => Name);
                 RaisePropertyChanged(() => ZP);
 
-                ((MainWindow)System.Windows.Application.Current.MainWindow).EnterName.Focus();
+                FocusName = true;
+                RaisePropertyChanged("FocusName");
 
 
 
@@ -177,6 +165,9 @@ namespace WpfHomeWork
 
                 }
                 RaisePropertyChanged("ResultFind");
+                
+                FocusZP = false;
+                RaisePropertyChanged("FocusZP");
             }
             else
             {
@@ -187,8 +178,8 @@ namespace WpfHomeWork
 
                 RaisePropertyChanged(() => ZP);
 
-                ((MainWindow)System.Windows.Application.Current.MainWindow).FindZP.Focus();
-
+                FocusZP = true;
+                RaisePropertyChanged("FocusZP");
 
 
             }
